@@ -1,18 +1,6 @@
+%var
 jlh_hotel = 10; 
-
-% Nama_Hotel = ["Ciputra","Pullman","GrandTropic","MenaraPeninsula","TwinPlaza","Santika","Mercure","Ibis","Jayakarta","RoyalRegal"];
 Nama_Hotel = [Ciputra,Pullman,GrandTropic,MenaraPeninsula,TwinPlaza,Santika,Mercure,Ibis,Jayakarta,RoyalRegal];
-% int: Ciputra = 1;
-% int: Pullman = 2;
-% int: GrandTropic = 3;
-% int: MenaraPeninsula = 4;
-% int: TwinPlaza = 5;
-% int: Santika = 6;
-% int: Mercure = 7;
-% int: Ibis = 8;
-% int: Jayakarta = 9;
-% int: RoyalRegal = 10;
-
 golongan = {Bintang_1,Bintang_2,Bintang_3,Bintang_4,Bintang_5};
 jenis = {Hotel_Bintang,Hotel_Melati,Motel};
 fasilitas = {Fasilitas_A,Fasilitas_B,Fasilitas_C,Fasilitas_D,Fasilitas_E};
@@ -46,12 +34,3 @@ facility = array2d(1..jlh_hotel,1..5,
   1,1,1,1,0,
   1,1,0,0,0,
 ]);
-% list_hotel = array2d(1..4,1..jlh_hotel,[
-% %Ciputra,Pullman,GrandTropic,MenaraPeninsula,TwinPLaza,Santika,Mercure,Ibis,Jayakarta,RoyalRegal
-% Bintang_1      ,Bintang_3      ,Bintang_4      ,Bintang_4      ,Bintang_4      ,Bintang_1      ,Bintang_4      ,Bintang_4      ,Bintang_4      ,Bintang_2,
-% Hotel_Bintang  ,Hotel_Bintang  ,Hotel_Bintang  ,Hotel_Bintang  ,Hotel_Bintang  ,Hotel_Bintang  ,Hotel_Bintang  ,Hotel_Bintang  ,Hotel_Bintang  ,Hotel_Bintang,
-% 333            ,317            ,195            ,211            ,200            ,200            ,200            ,300            ,300            ,180,
-% 100000         ,200000         ,300000         ,400000         ,500000         ,600000         ,700000         ,800000         ,900000         ,1000000
-% ]);
-% HotelAstika      ,Bintang_2 ,Hotel_Bintang ,153, 2000000,
-% IbisSlipi        ,Bintang_3 ,Hotel_Bintang ,338, 700000,
