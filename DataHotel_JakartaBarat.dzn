@@ -1,0 +1,25 @@
+jlh_hotel = 12; 
+
+Nama_Hotel = {Ciputra,Pullman,GrandTropic,MenaraPeninsula,TwinPlaza,Santika,IbisSlipi,Mercure,Ibis,Jayakarta,HotelAstika,RoyalRegal};
+Jumlah_Kamar = [333,317,195,333,333,333,333,333,333,333,444,444];
+%bintang = {Bintang_1,Bintang_2,Bintang_3,Bintang_4,Bintang_5};
+
+
+%nama hotel, bintang, jumlah kamar trsedia, jumlah total kamar, harga hotel
+
+% array hotel
+hotel = array2d(Nama_Hotel,1..5, 
+[
+Ciputra          ,1 ,100 ,333, 100000,
+Pullman          ,3 ,100 ,317, 200000,
+GrandTropic      ,4 ,100 ,195, 300000,
+MenaraPeninsula  ,4 ,100 ,211, 400000,
+TwinPlaza        ,4 ,100 ,200, 500000,
+Santika          ,1 ,100 ,200, 600000,
+IbisSlipi        ,3 ,100 ,338, 700000,
+Mercure          ,4 ,100 ,200, 800000,
+Ibis             ,4 ,100 ,300, 900000,
+Jayakarta        ,4 ,100 ,300, 1000000,
+HotelAstika      ,2 ,100 ,153, 2000000,
+RoyalRegal       ,2 ,100 ,180, 3000000,
+]);
