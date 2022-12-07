@@ -17,6 +17,7 @@
 
 include "globals.mzn"; 
 
+% file dzn yg di gunakan yg ada array biner untuk facility 
 int: n =  card(Nama_Hotel);
 int: jlh_hotel;
 enum Nama_Hotel;
@@ -45,26 +46,31 @@ solve satisfy;
 constraint
   nama_hotel_termurah = {p | p in Nama_Hotel where hotel[p,5] <= userinput_hrg_murah /\ 
     forall(g in fasilitas)(
-      facility[p,g] >= userinput_fasilitas[g]) /\ hotel[p,2] <= minimal_input_bintang
+      facility[p,g] >= userinput_fasilitas[g]) /\ 
+      hotel[p,2] <= minimal_input_bintang
     }
   /\
   nama_hotel_termahal = {p | p in Nama_Hotel where hotel[p,5] >= userinput_hrg_mahal /\ 
     forall(g in fasilitas)(
-      facility[p,g] >= userinput_fasilitas[g]) /\ hotel[p,2] <= minimal_input_bintang
+      facility[p,g] >= userinput_fasilitas[g]) /\ 
+      hotel[p,2] <= minimal_input_bintang
     } 
   ;
 
 output 
 [
- "Jumlah Hotel Diatas Harga ",show(userinput_hrg_mahal)," adalah : \(jumlah_nama_hotel_termahal) (\(nama_hotel_termahal))\n",
+  "Requirement : ",
+  "\n Harga <= ", show(userinput_hrg_murah)," & >= ", show(userinput_hrg_mahal)," ; \nBintang Hotel <= ", show(minimal_input_bintang),"\n",
+  
+  "\nHasil : ",
+ "\nJumlah Hotel Diatas Harga ",show(userinput_hrg_mahal)," adalah : \(jumlah_nama_hotel_termahal) (\(nama_hotel_termahal))\n",
  "Jumlah Hotel Dibawah Harga ",show(userinput_hrg_murah)," adalah : \(jumlah_nama_hotel_termurah) (\(nama_hotel_termurah))\n",
  
- "\n\nDaftar Hotel Diatas Harga : ",show(userinput_hrg_mahal)," IDR\n Nama Hotel : ", show(nama_hotel_termahal),"\n Harga Hotel (IDR) : ",
+ "\nDaftar Hotel Diatas Harga : ",show(userinput_hrg_mahal)," IDR\n Nama Hotel : ", show(nama_hotel_termahal),"\n Harga Hotel (IDR) : ",
  show([hotel[p,5] | p in nama_hotel_termahal] ),
  " \n Bintang : ", show([hotel[p,2] | p in nama_hotel_termahal ]),
  
  "\n\nDaftar Hotel Dibawah Harga : ",show(userinput_hrg_murah)," IDR\n Nama Hotel : ", show(nama_hotel_termurah),"\n Harga Hotel (IDR) : ",
  show([hotel[p,5] | p in nama_hotel_termurah]),
  " \n Bintang : ", show([hotel[p,2] | p in nama_hotel_termurah ]),
- 
 ];
