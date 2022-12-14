@@ -1,0 +1,17 @@
+Requirement : 
+ Harga <= 300000 & >= 900000 ; 
+Bintang Hotel <= 4
+
+Hasil : 
+Jumlah Hotel Diatas Harga 900000 adalah : 2 ({Ibis, Jayakarta})
+Jumlah Hotel Dibawah Harga 300000 adalah : 2 ({Pullman, GrandTropic})
+
+Daftar Hotel Diatas Harga : 900000 IDR
+ Nama Hotel : {Ibis, Jayakarta}
+ Harga Hotel (IDR) : [900000, 1000000] 
+ Bintang : [4, 4]
+
+Daftar Hotel Dibawah Harga : 300000 IDR
+ Nama Hotel : {Pullman, GrandTropic}
+ Harga Hotel (IDR) : [200000, 300000] 
+ Bintang : [3, 4]

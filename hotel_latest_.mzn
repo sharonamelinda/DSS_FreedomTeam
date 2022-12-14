@@ -16,6 +16,7 @@
 % RoyalRegal        Bintang_2          Hotel_Bintang     300         3000000
 
 include "globals.mzn"; 
+% include "Dataset/HotelDataset_JakartaBarat.dzn";
 
 % file dzn yg di gunakan yg ada array biner untuk facility 
 int: n =  card(Nama_Hotel);
