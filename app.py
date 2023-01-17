@@ -2,7 +2,7 @@
 
 import cgi,os
 import json
-print('Location: http://localhost/Hotel2/index.php?navigasi=A1\r\n\r'); #Redirect page after user input specification hotel.
+print('Location: http://localhost/freedom_hotel_SPK-main/index.php?navigasi=A1\r\n\r'); #Redirect page after user input specification hotel.
 
 form=cgi.FieldStorage()
 # Get value from form HTML to python
