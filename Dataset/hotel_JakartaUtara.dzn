@@ -1,0 +1,36 @@
+jlh_hotel = 11; 
+Nama_Hotel = {nill_hotel,GrandAsia,CondotelGoldenSky,SannoJakartaAirportHotel,TematikHotel,DanauSunter,DeltaDutaFortuna,HotelKingCross,GoldenHandsHotel,HarrisKelapaGading,GrandWhiz};
+golongan = {nill_golongan,Bintang_1,Bintang_2,Bintang_3,Bintang_4,Bintang_5};
+jenis = {nill_jenis,Hotel_Bintang,Hotel_Melati,Motel};
+fasilitas = {nill_fasilitas,Fasilitas_A,Fasilitas_B,Fasilitas_C,Fasilitas_D,Fasilitas_E};
+
+hotel = array2d(Nama_Hotel,1..5, 
+[
+%nama                           bintang                  kategori             jlh kamar        harga
+nill_hotel                     ,nill_golongan          ,nill_jenis          ,0,               0,
+GrandAsia                      ,Bintang_3              ,Hotel_Bintang       ,198,             100000,
+CondotelGoldenSky              ,Bintang_3              ,Hotel_Bintang       ,75,              200000,
+SannoJakartaAirportHotel       ,Bintang_3              ,Hotel_Bintang       ,94,              300000,
+TematikHotel                   ,Bintang_2              ,Hotel_Bintang       ,73,              400000,
+DanauSunter                    ,Bintang_4              ,Hotel_Bintang       ,240,             500000,
+DeltaDutaFortuna               ,Bintang_3              ,Hotel_Bintang       ,30,              600000,
+HotelKingCross                 ,Bintang_3              ,Hotel_Bintang       ,27,              700000,
+GoldenHandsHotel               ,Bintang_3              ,Hotel_Bintang       ,40,              800000,
+HarrisKelapaGading             ,Bintang_3              ,Hotel_Bintang       ,319,             900000,
+GrandWhiz                      ,Bintang_4              ,Hotel_Bintang       ,242,             1000000,
+]);
+
+facility = array2d(1..jlh_hotel,1..6,
+[
+  0,0,0,0,0,0,
+  0,1,1,1,0,0,
+  0,1,1,1,0,0,
+  0,1,1,1,0,0,
+  0,1,1,0,0,0,
+  0,1,1,1,1,0,
+  0,1,1,1,0,0,
+  0,1,1,1,0,0,
+  0,1,1,1,0,0,
+  0,1,1,1,0,0,
+  0,1,1,1,1,0,
+]);

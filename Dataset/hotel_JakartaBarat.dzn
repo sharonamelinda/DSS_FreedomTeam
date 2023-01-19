@@ -1,36 +1,37 @@
-%var
-jlh_hotel = 10; 
-Nama_Hotel = [Ciputra,Pullman,GrandTropic,MenaraPeninsula,TwinPlaza,Santika,Mercure,Ibis,Jayakarta,RoyalRegal];
-golongan = {Bintang_1,Bintang_2,Bintang_3,Bintang_4,Bintang_5};
-jenis = {Hotel_Bintang,Hotel_Melati,Motel};
-fasilitas = {Fasilitas_A,Fasilitas_B,Fasilitas_C,Fasilitas_D,Fasilitas_E};
+jlh_hotel = 11; 
+Nama_Hotel = [nill_hotel,Ciputra,Pullman,GrandTropic,MenaraPeninsula,TwinPlaza,Santika,Mercure,Ibis,Jayakarta,RoyalRegal];
+golongan = {nill_golongan,Bintang_1,Bintang_2,Bintang_3,Bintang_4,Bintang_5};
+jenis = {nill_jenis,Hotel_Bintang,Hotel_Melati,Motel};
+fasilitas = {nill_fasilitas,Fasilitas_A,Fasilitas_B,Fasilitas_C,Fasilitas_D,Fasilitas_E};
 
 % array hotel
 hotel = array2d(1..jlh_hotel,1..5, 
 [
-%nama           bintang    kategori             jlh kamar     harga
-Ciputra          ,1         ,Hotel_Bintang       ,333,       100000,  %{Fasilitas_A},
-Pullman          ,3         ,Hotel_Bintang       ,317,       200000,  %{Fasilitas_A,Fasilitas_B,Fasilitas_C},
-GrandTropic      ,4         ,Hotel_Bintang       ,195,       300000,  %{Fasilitas_A,Fasilitas_B,Fasilitas_C,Fasilitas_D},
-MenaraPeninsula  ,4         ,Hotel_Bintang       ,211,       400000,  %{Fasilitas_A,Fasilitas_B,Fasilitas_C,Fasilitas_D},
-TwinPlaza        ,4         ,Hotel_Bintang       ,200,       500000,  %{Fasilitas_A,Fasilitas_B,Fasilitas_C,Fasilitas_D},
-Santika          ,1         ,Hotel_Bintang       ,200,       600000,  %{Fasilitas_A},
-Mercure          ,4         ,Hotel_Bintang       ,200,       800000,  %{Fasilitas_A,Fasilitas_B,Fasilitas_C,Fasilitas_D},
-Ibis             ,4         ,Hotel_Bintang       ,300,       900000,  %{Fasilitas_A,Fasilitas_B,Fasilitas_C,Fasilitas_D},
-Jayakarta        ,4         ,Hotel_Bintang       ,300,       1000000, %{Fasilitas_A,Fasilitas_B,Fasilitas_C,Fasilitas_D},
-RoyalRegal       ,2         ,Hotel_Bintang       ,180,       3000000, %{Fasilitas_A,Fasilitas_B},
+%nama           bintang           kategori             jlh kamar        harga
+nill_hotel       ,nill_golongan          ,nill_jenis          ,0,               0,
+Ciputra          ,Bintang_1              ,Hotel_Bintang       ,333,             100000,  %{Fasilitas_A},
+Pullman          ,Bintang_3              ,Hotel_Bintang       ,317,             200000,  %{Fasilitas_A,Fasilitas_B,Fasilitas_C},
+GrandTropic      ,Bintang_4              ,Hotel_Bintang       ,195,             300000,  %{Fasilitas_A,Fasilitas_B,Fasilitas_C,Fasilitas_D},
+MenaraPeninsula  ,Bintang_4              ,Hotel_Bintang       ,211,             400000,  %{Fasilitas_A,Fasilitas_B,Fasilitas_C,Fasilitas_D},
+TwinPlaza        ,Bintang_4              ,Hotel_Bintang       ,200,             500000,  %{Fasilitas_A,Fasilitas_B,Fasilitas_C,Fasilitas_D},
+Santika          ,Bintang_1              ,Hotel_Bintang       ,200,             600000,  %{Fasilitas_A},
+Mercure          ,Bintang_4              ,Hotel_Bintang       ,200,             800000,  %{Fasilitas_A,Fasilitas_B,Fasilitas_C,Fasilitas_D},
+Ibis             ,Bintang_4              ,Hotel_Bintang       ,300,             900000,  %{Fasilitas_A,Fasilitas_B,Fasilitas_C,Fasilitas_D},
+Jayakarta        ,Bintang_4              ,Hotel_Bintang       ,300,             1000000, %{Fasilitas_A,Fasilitas_B,Fasilitas_C,Fasilitas_D},
+RoyalRegal       ,Bintang_2              ,Hotel_Bintang       ,180,             3000000, %{Fasilitas_A,Fasilitas_B},
 ]);
 
-facility = array2d(1..jlh_hotel,1..5,
+facility = array2d(1..jlh_hotel,1..6,
 [
-  1,0,0,0,0,
-  1,1,1,0,0,
-  1,1,1,1,0,
-  1,1,1,1,0,
-  1,1,1,1,0,
-  1,0,0,0,0,
-  1,1,1,1,0,
-  1,1,1,1,0,
-  1,1,1,1,0,
-  1,1,0,0,0,
+  0,0,0,0,0,0,
+  0,1,0,0,0,0,
+  0,1,1,1,0,0,
+  0,1,1,1,1,0,
+  0,1,1,1,1,0,
+  0,1,1,1,1,0,
+  0,1,0,0,0,0,
+  0,1,1,1,1,0,
+  0,1,1,1,1,0,
+  0,1,1,1,1,0,
+  0,1,1,0,0,0,
 ]);

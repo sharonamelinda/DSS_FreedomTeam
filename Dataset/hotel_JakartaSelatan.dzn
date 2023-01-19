@@ -1,0 +1,36 @@
+jlh_hotel = 11; 
+Nama_Hotel = [nill_hotel,GranMahakam,TheDharmawangsa,Ambhara,GoldenBoutiqueMelawai,Amaris,Fortune,CrownePlazaJakarta,JWMariottHotel,TheParkLaneJakarta,TheRitzCarltonPacificPlace];
+golongan = {nill_golongan,Bintang_1,Bintang_2,Bintang_3,Bintang_4,Bintang_5};
+jenis = {nill_jenis,Hotel_Bintang,Hotel_Melati,Motel};
+fasilitas = {nill_fasilitas,Fasilitas_A,Fasilitas_B,Fasilitas_C,Fasilitas_D,Fasilitas_E};
+
+hotel = array2d(Nama_Hotel,1..5, 
+[
+%nama                       bintang                  kategori             jlh kamar        harga
+nill_hotel                  ,nill_golongan          ,nill_jenis          ,0,               0,
+GranMahakam                 ,Bintang_5              ,Hotel_Bintang       ,158,             100000,
+TheDharmawangsa             ,Bintang_5              ,Hotel_Bintang       ,100,             200000,
+Ambhara                     ,Bintang_4              ,Hotel_Bintang       ,222,             300000,
+GoldenBoutiqueMelawai       ,Bintang_3              ,Hotel_Bintang       ,73,              400000,
+Amaris                      ,Bintang_3              ,Hotel_Bintang       ,56,              500000,
+Fortune                     ,Bintang_3              ,Hotel_Bintang       ,50,              600000,
+CrownePlazaJakarta          ,Bintang_5              ,Hotel_Bintang       ,373,             700000,
+JWMariottHotel              ,Bintang_5              ,Hotel_Bintang       ,333,             800000,
+TheParkLaneJakarta          ,Bintang_5              ,Hotel_Bintang       ,287,             900000,
+TheRitzCarltonPacificPlace  ,Bintang_5              ,Hotel_Bintang       ,63,              1000000,
+]);
+
+facility = array2d(1..jlh_hotel,1..6,
+[
+  0,0,0,0,0,0,
+  0,1,1,1,1,1,
+  0,1,1,1,1,1,
+  0,1,1,1,1,0,
+  0,1,1,1,0,0,
+  0,1,1,1,0,0,
+  0,1,1,1,0,0,
+  0,1,1,1,1,1,
+  0,1,1,1,1,1,
+  0,1,1,1,1,1,
+  0,1,1,1,1,1,
+]);

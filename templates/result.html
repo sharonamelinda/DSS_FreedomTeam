@@ -1,0 +1,152 @@
+<script>
+    //Read and print JSON file to Table    
+    function readTextFile(file, callback) {
+        var rawFile = new XMLHttpRequest();
+        rawFile.overrideMimeType("application/json");
+        rawFile.open("GET", file, true);
+        rawFile.onreadystatechange = function() {
+            if (rawFile.readyState === 4 && rawFile.status == "200") {
+                callback(rawFile.responseText);
+            }
+        }
+        rawFile.send(null);
+    }
+    readTextFile("../template/data.json", function(text){
+        var mydata = JSON.parse(text);
+        console.log(mydata);               
+        tr = $('<tr/>');
+        tr.append("<td>" + mydata.userinput_hrg_mahal + "</td>");
+        tr.append("<td>" + mydata.userinput_hrg_murah + "</td>");
+        tr.append("<td>" + mydata.list_nama_hotel_termahal + "</td>");
+        tr.append("<td>" + mydata.list_nama_hotel_termurah + "</td>");
+        tr.append("<td>" + mydata.array_nama_hotel_termahal + "</td>");
+        tr.append("<td>" + mydata.array_nama_hotel_termurah + "</td>");
+        tr.append("<td>" + mydata.array_bintang_hotel_termahal + "</td>");
+        tr.append("<td>" + mydata.array_bintang_hotel_termurah + "</td>");
+        $('#table').append(tr);
+    });            
+</script>
+<script>   
+    $(document).ready(function(){
+        $('#formModalRecomendasi').modal({
+            show: true
+        })
+    });
+</script>
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+        <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type='text/css' href="template/asset/css/style1.css">
+        <link rel="stylesheet" type='text/css' href="template/asset/loginFormAsset/css/style.css">
+        <link rel="stylesheet" type='text/css' href="template/asset/loginFormAsset/css/animate-custom.css">
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>        
+        <script type="text/javascript" src="https://kit.fontawesome.com/de2bd07a60.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+        <script type="text/javascript" src="template/asset/js/jquery.maskMoney.min.js"></script>
+    </head>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">HOTEL</a>  
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>  
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active navIcon">
+                    <a class="nav-link" href="/welcome_view"><i class="fa fa-home" aria-hidden="true"></i><span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about_us">About US</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Menu
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item disabled" href="#">Under Maintenance</a>          
+                        <a class="dropdown-item disabled" href="#">Under Maintenance</a>                    
+                    </div>                
+                </li>            
+            </ul>
+
+
+            <div class="col d-flex justify-content-end">
+                <div class="menu-media">
+                    <p class="mb-0 d-flex mrIconNav">                
+                        <a class="nav-link btn_modal1" data-toggle="modal" data-target="#formModalRecomendasi" href="/">
+                            <i class="fa fa-search" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Klik disini ya, untuk mendapatkan rekomendasi hotel sesuai kebutuhan anda."></i></a>
+                        <a href="#">
+                            <img src="{{url_for('static', filename='template/asset/image/UnknowUser.jpg')}}" class="rounded-circle round_bt_Icon btn_user" alt="" loading="lazy"/>
+                        </a>                
+                    </p>
+                </div>
+            </div>
+        </div>
+    </nav>
+            <div class="container">
+                <br>
+                <br>
+                <h1 class="text text-success text-center ">
+                    Hasil Pencarian
+                </h1>         
+                <p class="text-center">
+                    <h4>Data yang diinput : </h4>
+                    <ul>
+                        <li style="list-style: none;"><b>Kota</b>           : {{result['input_kota']}}</li>
+                        <li style="list-style: none;"><b>Harga Maksimal</b> : {{result['input_max']}}</li>
+                        <li style="list-style: none;"><b>Harga Minimal</b>  : {{result['input_min']}}</li>
+                    </ul>
+                </p>   
+                <br>
+                <br>
+                <table class="table table-striped text-center"> 
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Nama Hotel Termahal</th>
+                            <th>Bintang Hotel Termahal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table" class="text-center">
+                             
+                    {% for item in result['array_hotel_termahal'] %}
+                    <tr>
+                        <td>{{item[0]}}</td>
+                        <td>{{item[1]}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <br>
+                <br>
+                <table class="table table-striped text-center"> 
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Nama Hotel Termurah</th>
+                            <th>Bintang Hotel Termurah</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table" class="text-center">
+                             
+                    {% for item in result['array_hotel_termurah'] %}
+                    <tr>
+                        <td>{{item[0]}}</td>
+                        <td>{{item[1]}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+    </body>
+</html>
