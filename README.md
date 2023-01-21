@@ -2,8 +2,7 @@
 ## Sistem Pendukung Keputusan Pemilihan Hotel di Jakarta
 ### Informatika UKRIDA
 
-Group: Freedom
-Member: 
+### FREEDOM TEAM 
 - Valiant D (412016014)
 - Sharon A (412019008)
 - Baptista V (412019019)
